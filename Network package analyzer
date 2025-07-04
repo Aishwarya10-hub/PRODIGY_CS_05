@@ -1,1 +1,19 @@
+# Simulated packet data
+sample_packets = [
+    {"src": "192.168.1.2", "dst": "172.217.0.46", "protocol": "TCP", "payload": "GET /index.html HTTP/1.1"},
+    {"src": "192.168.1.2", "dst": "8.8.8.8", "protocol": "UDP", "payload": "DNS Query"},
+    {"src": "10.0.0.1", "dst": "10.0.0.5", "protocol": "TCP", "payload": "SSH Handshake"},
+    {"src": "192.168.1.2", "dst": "104.16.132.229", "protocol": "TCP", "payload": "TLS Client Hello"},
+]
 
+# Function to process packets
+def analyze_packets(packets):
+    for i, pkt in enumerate(packets, 1):
+        print(f"\n📦 Packet {i}:")
+        print(f"Source IP      : {pkt['src']}")
+        print(f"Destination IP : {pkt['dst']}")
+        print(f"Protocol       : {pkt['protocol']}")
+        print(f"Payload Data   : {pkt['payload']}")
+
+# Run analysis
+analyze_packets(sample_packets)
